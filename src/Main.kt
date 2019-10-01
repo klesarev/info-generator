@@ -8,6 +8,7 @@ import com.google.gson.JsonArray
 import com.google.gson.JsonElement
 import entity.GeoObject
 import entity.GeoObjectItem
+import utils.FileHelper
 
 
 fun main() {
