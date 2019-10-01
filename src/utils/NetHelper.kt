@@ -10,16 +10,6 @@ class NetHelper () {
     fun sendRequest(link: String): String {
         val url = URL(link);
 
-//        if (options != null) {
-//            val sb = StringBuilder();
-//            for ((key, value) in options.entries) {
-//                sb.append("${key}=${value}&")
-//            }
-//            url = URL(link + "/?" + sb.delete(sb.length-1,sb.length));
-//        } else {
-//            url = URL(link)
-//        }
-
         with(url.openConnection() as HttpURLConnection) {
             requestMethod = "GET";
             if (responseCode == 200) {
