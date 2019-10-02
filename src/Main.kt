@@ -1,5 +1,7 @@
 
 import api.MainGenerator
+import entity.Codes
+import kotlin.random.Random
 
 
 fun main() {
@@ -11,4 +13,6 @@ fun main() {
     hashMap.put("lat","39.948474")
     hashMap.put("long","48.333423")
 
+    val code = MainGenerator().genPhone( Codes.MEGAFON.genCode() )
+    print(code)
 }
