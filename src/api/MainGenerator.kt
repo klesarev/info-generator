@@ -2,12 +2,9 @@ package api
 
 import com.google.gson.Gson
 import com.google.gson.JsonParser
-import entity.GeoObjectItem
-import utils.FileHelper
+import entity.GeoObject
 import utils.NetHelper
 import java.lang.Exception
-import java.util.*
-import java.util.logging.SimpleFormatter
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 import kotlin.random.Random
@@ -29,8 +26,9 @@ class MainGenerator() {
         return "Mr. Nobody";
     }
 
-    fun genAdress(secretkey: String, limit: Int, coords: HashMap<String,String>):ArrayList<GeoObjectItem> {
-        val list: ArrayList<GeoObjectItem> = ArrayList();
+
+    fun genAdress(secretkey: String, limit: Int, coords: HashMap<String,String>):ArrayList<GeoObject> {
+        val list: ArrayList<GeoObject> = ArrayList();
         val req = NetHelper()
             .sendRequest("https://geocode-maps.yandex.ru/1.x/" +
                     "?apikey=${secretkey}" +
@@ -53,7 +51,7 @@ class MainGenerator() {
                     .getAsJsonObject("metaDataProperty")
                     .getAsJsonObject("GeocoderMetaData")
 
-                val adress = Gson().fromJson(jarray, GeoObjectItem::class.java)
+                val adress = Gson().fromJson(jarray, GeoObject::class.java)
                 list.add(adress);
             }
         } catch (ex: Exception) {

@@ -1,14 +1,5 @@
 
 import api.MainGenerator
-import com.google.gson.Gson
-import utils.NetHelper
-import com.google.gson.JsonParser
-import com.google.gson.JsonObject
-import com.google.gson.JsonArray
-import com.google.gson.JsonElement
-import entity.GeoObject
-import entity.GeoObjectItem
-import utils.FileHelper
 
 
 fun main() {
