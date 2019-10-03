@@ -18,10 +18,10 @@ class FileHelper {
 
     }
 
-    fun readFile(path: String): String {
-        var result: String = "";
+    fun readFile(filePath: String): String {
+        var result: String = ""
         try {
-            val bufferedReader: BufferedReader = Files.newBufferedReader(Paths.get(path), StandardCharsets.UTF_8);
+            val bufferedReader: BufferedReader = Files.newBufferedReader(Paths.get(filePath), StandardCharsets.UTF_8);
             result = bufferedReader.use { it.readText() };
         } catch (ex: IOException) {
             ex.printStackTrace();

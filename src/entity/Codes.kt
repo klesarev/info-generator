@@ -2,24 +2,12 @@ package entity
 
 import kotlin.random.Random
 
-enum class Codes(code: String) {
-    MTS("MTS"){
-        override fun genCode(): String {
-            val list: Array<String> = arrayOf("910","915","916","918")
-            return list.get(Random.nextInt(0,list.size))
-        }
-    },
-    MEGAFON("MEGAFON"){
-        override fun genCode(): String {
-            val list: Array<String> = arrayOf("925","926","928")
-            return list.get(Random.nextInt(0,list.size))
-        }
-    },
-    BEELINE("BEELINE"){
-        override fun genCode(): String {
-            val list: Array<String> = arrayOf("903","904","905","906")
+enum class Codes {
+    MOBILE {
+        override fun generate(): Int {
+            val list: Array<Int> = arrayOf(900,901,902,903,905,906,908,909,910,915,916,918,928,929,953,958,960,961,966,967,968,999)
             return list.get(Random.nextInt(0,list.size))
         }
     };
-    abstract fun genCode():String
+    abstract fun generate():Int
 }

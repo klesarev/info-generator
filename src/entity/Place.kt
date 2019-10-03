@@ -1,5 +1,5 @@
 package entity
 
 data class Place(
-    val coords: HashMap<String,String>
+    val coords: ArrayList<HashMap<String,String>>
 )

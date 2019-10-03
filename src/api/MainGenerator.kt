@@ -11,7 +11,7 @@ import kotlin.random.Random
 
 class MainGenerator() {
 
-    fun genPhone(code: String):String {
+    fun genPhone(code: Int):String {
         var phone:String = "+7(${code})";
         for (n in 1..7 ) {
             phone += "${Random.nextInt(0,9)}"
