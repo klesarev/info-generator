@@ -1,9 +1,5 @@
-
 import api.MainGenerator
 import entity.Codes
-import entity.Person
-import kotlin.random.Random
-
 
 fun main() {
     //    for(pers in Person::class.memberProperties) {
@@ -14,4 +10,6 @@ fun main() {
     hashMap.put("lat","39.948474")
     hashMap.put("long","48.333423")
 
+    val test = MainGenerator().genPhone(925)
+    print(test)
 }

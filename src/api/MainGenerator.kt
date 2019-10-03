@@ -16,7 +16,10 @@ class MainGenerator() {
         for (n in 1..7 ) {
             phone += "${Random.nextInt(0,9)}"
         }
-        return phone;
+        return StringBuilder(phone)
+                .insert(10,"-")
+                .insert(13,"-")
+                .toString();
     }
 
     fun genName(): String {
