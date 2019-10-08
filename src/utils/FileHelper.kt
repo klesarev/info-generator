@@ -7,26 +7,25 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
 
-class FileHelper {
+class FileHelper: WriteableDataProvider<String, String> {
 
-    fun writeFile(filePath: String, fileContent: String) {
-        try {
-            Files.write(Paths.get(filePath), fileContent.toByteArray(), StandardOpenOption.APPEND, StandardOpenOption.CREATE)
-        } catch (ex: IOException) {
-            ex.printStackTrace()
-        }
-
-    }
-
-    fun readFile(filePath: String): String {
+    override fun getData(file: String): String {
         var result: String = ""
         try {
-            val bufferedReader: BufferedReader = Files.newBufferedReader(Paths.get(filePath), StandardCharsets.UTF_8);
+            val bufferedReader: BufferedReader = Files.newBufferedReader(Paths.get(file), StandardCharsets.UTF_8);
             result = bufferedReader.use { it.readText() };
         } catch (ex: IOException) {
             ex.printStackTrace();
         }
         return result
+    }
+
+    override fun writeData(file: String, content: String) {
+        try {
+            Files.write(Paths.get(file), content.toByteArray(), StandardOpenOption.APPEND, StandardOpenOption.CREATE)
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+        }
     }
 
 }

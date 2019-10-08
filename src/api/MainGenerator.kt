@@ -33,7 +33,7 @@ class MainGenerator() {
     fun genAdress(secretkey: String, limit: Int, coords: HashMap<String,String>):ArrayList<GeoObject> {
         val list: ArrayList<GeoObject> = ArrayList();
         val req = NetHelper()
-            .sendRequest("https://geocode-maps.yandex.ru/1.x/" +
+            .getData("https://geocode-maps.yandex.ru/1.x/" +
                     "?apikey=${secretkey}" +
                     "&geocode=${coords.get("lat")},${coords.get("long")}" +
                     "&kind=house" +

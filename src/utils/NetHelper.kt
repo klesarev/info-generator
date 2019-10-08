@@ -4,11 +4,10 @@ import java.lang.StringBuilder
 import java.net.HttpURLConnection
 import java.net.URL
 
-class NetHelper () {
-    val response = StringBuilder();
-
-    fun sendRequest(link: String): String {
+class NetHelper:DataProvider<String> {
+    override fun getData(link: String): String {
         val url = URL(link);
+        val response = StringBuilder();
 
         with(url.openConnection() as HttpURLConnection) {
             requestMethod = "GET";
@@ -22,4 +21,5 @@ class NetHelper () {
         }
         return response.toString();
     }
+
 }
