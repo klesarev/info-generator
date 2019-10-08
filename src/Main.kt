@@ -1,6 +1,8 @@
 import api.MainGenerator
 import entity.Codes
 import utils.FileDataProvider
+import utils.WriteableDataProvider
+import kotlin.random.Random
 
 fun main() {
     //    for(pers in Person::class.memberProperties) {
@@ -11,9 +13,8 @@ fun main() {
     hashMap.put("lat","39.948474")
     hashMap.put("long","48.333423")
 
-    val test = MainGenerator().genPhone(Codes.MOBILE.generate())
-    FileDataProvider().writeData("test.txt",test)
-    println(
-        FileDataProvider().getData("test.txt")
-    )
+    val test = FileDataProvider().getDataById("names.txt", Random.nextInt(0,2))
+
+    print(test)
+
 }
