@@ -1,6 +1,6 @@
 package utils
 
-class SQLHelper: DataProvider<String> {
+class SQLDataProvider: DataProvider<String> {
     override fun getData(file: String): String {
         return "sdfsf"
     }

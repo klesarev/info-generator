@@ -3,7 +3,7 @@ package api
 import com.google.gson.Gson
 import com.google.gson.JsonParser
 import entity.GeoObject
-import utils.NetHelper
+import utils.NetDataProvider
 import java.lang.Exception
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
@@ -32,7 +32,7 @@ class MainGenerator() {
 
     fun genAdress(secretkey: String, limit: Int, coords: HashMap<String,String>):ArrayList<GeoObject> {
         val list: ArrayList<GeoObject> = ArrayList();
-        val req = NetHelper()
+        val req = NetDataProvider()
             .getData("https://geocode-maps.yandex.ru/1.x/" +
                     "?apikey=${secretkey}" +
                     "&geocode=${coords.get("lat")},${coords.get("long")}" +

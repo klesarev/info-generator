@@ -7,7 +7,7 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
 
-class FileHelper: WriteableDataProvider<String, String> {
+class FileDataProvider: WriteableDataProvider<String, String> {
 
     override fun getData(file: String): String {
         var result: String = ""

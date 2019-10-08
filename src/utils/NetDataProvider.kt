@@ -4,7 +4,7 @@ import java.lang.StringBuilder
 import java.net.HttpURLConnection
 import java.net.URL
 
-class NetHelper:DataProvider<String> {
+class NetDataProvider: DataProvider<String> {
     override fun getData(link: String): String {
         val url = URL(link);
         val response = StringBuilder();
